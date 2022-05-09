@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+
+  {% if object %}
+    Update {{ object }}
+  {% else %}
+    Add new Faculty
+  {% endif %}
+
+{% endblock title %}
+
+
+{% block content %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+
+  {% include 'corecode/form_snippet.html' %}
+
+  {% if object %}
+    <input type="submit" class="btn btn-secondary" value="Update Record">
+  {% else %}
+    <input type="submit" class="btn btn-secondary" value="Add new Faculty">
+  {% endif %}
+</form>
+
+
+{% endblock content %}
